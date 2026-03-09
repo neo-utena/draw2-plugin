@@ -30,6 +30,30 @@ O projeto de backend está disponível [aqui](https://github.com/HichTala/draw2)
 Esse projeto é licenciado sob [GNU Affero General Public License v3.0](LICENCE); qualquer contribuição é bem-vinda.
 
 ---
+## <div align="center">📰 News</div>
+
+> 🃏 **Latest card pool:** `JUSH` --- last updated `24-08-2025`  
+> 🔧 **Latest app version:** `0.1.5-alpha` --- last updated `09-03-2025`
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><b>09-03-2025</b></td>
+    <td>🔧 App Update</td>
+    <td>Released version 0.1.5-alpha --- <a href="https://github.com/HichTala/draw2-plugin/releases/tag/0.1.5">see release notes</a></td>
+  </tr>
+  <tr>
+    <td><b>24-08-2025</b></td>
+    <td>🃏 Card Pool</td>
+    <td>Card pool updated --- now supports cards up to <i>Justic Hunter</i></td>
+  </tr>
+</table>
+
+---
 
 ## <div align="center">Documentação</div>
 
@@ -41,7 +65,7 @@ Siga a instrução de instalação dependendo do seu sistema operacional para qu
 <summary>🪟 Windows</summary>
 
 1. Baixe o instalador do plugin deste 
-   link: [DRAW2 Plugin Installer](https://github.com/HichTala/draw2-plugin/releases/download/0.1.4/draw2-plugin-installer.exe)
+   link: [DRAW2 Plugin Installer](https://github.com/HichTala/draw2-plugin/releases/download/0.1.5/draw2-plugin-installer.exe)
 2. Execute o instalador e siga as instruções na tela.
 3. Assim que a instalação estiver concluída, execute o OBS Studio. Se tudo foi configurado corretamente, 
    deve-se ver no menu `Painéis` uma nova opção chamada `Draw 2`. 

@@ -32,6 +32,30 @@ The python backend project is available [here](https://github.com/HichTala/draw2
 This project is licensed under the [GNU Affero General Public License v3.0](LICENCE); all contributions are welcome.
 
 ---
+## <div align="center">📰 News</div>
+
+> 🃏 **Latest card pool:** `JUSH` --- last updated `24-08-2025`  
+> 🔧 **Latest app version:** `0.1.5-alpha` --- last updated `09-03-2025`
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><b>09-03-2025</b></td>
+    <td>🔧 App Update</td>
+    <td>Released version 0.1.5-alpha --- <a href="https://github.com/HichTala/draw2-plugin/releases/tag/0.1.5">see release notes</a></td>
+  </tr>
+  <tr>
+    <td><b>24-08-2025</b></td>
+    <td>🃏 Card Pool</td>
+    <td>Card pool updated --- now supports cards up to <i>Justic Hunter</i></td>
+  </tr>
+</table>
+
+---
 
 ## <div align="center">📄Documentation</div>
 
@@ -43,7 +67,7 @@ Follow the installation instruction depending on your operating system so everyt
 <summary>🪟 Windows</summary>
 
 1. Download the plugin installer from this
-   link: [DRAW2 Plugin Installer](https://github.com/HichTala/draw2-plugin/releases/download/0.1.4/draw2-plugin-installer.exe)
+   link: [DRAW2 Plugin Installer](https://github.com/HichTala/draw2-plugin/releases/download/0.1.5/draw2-plugin-installer.exe)
 2. Run the installer and follow the on-screen instructions.
 3. Once the installation is complete, launch OBS Studio. If everything is set up correctly, you should see in the
    `Docks` menu
