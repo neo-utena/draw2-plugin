@@ -92,11 +92,10 @@ extern "C" void init_shared_memory(draw_source_data_t *context)
 extern "C" void destroy_shared_memory(draw_source_data_t *context)
 {
 	using namespace boost::interprocess;
-#ifdef _WIN32
+	delete static_cast<mapped_region *>(context->region);
+#ifndef _WIN32
 	shared_memory_object::remove(OBS_SHM_NAME);
 	shared_memory_object::remove(PYTHON_SHM_NAME);
-#else
-	delete static_cast<mapped_region *>(context->region);
 #endif
 	context->region = nullptr;
 	context->shared_frame = nullptr;
