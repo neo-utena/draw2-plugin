@@ -43,9 +43,11 @@ void draw_source_destroy(void *data)
 		gs_stagesurface_destroy(context->stage);
 	}
 	obs_leave_graphics();
-	if (context->shared_frame) {
+	if (context->display_texture)
+		gs_texture_destroy(context->display_texture);
+	if (context->shared_frame)
 		destroy_shared_memory(context);
-	}
+
 	bfree(context);
 }
 
