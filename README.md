@@ -72,20 +72,8 @@ Follow the installation instruction depending on your operating system so everyt
 3. Once the installation is complete, launch OBS Studio. If everything is set up correctly, you should see in the
    `Docks` menu
    a new option called `Draw 2`. You can activate the dock and dock it wherever you want.
-4. At this step the installation is not complete yet. You need to download the DRAW 2 model weights.
-   Close OBS Studio and open the folder where the plugin is installerd. By default, it should be in:
-   `C:\Program Files\draw2`. Here you can open the `python` folder right click anywhere and select `Open in Terminal`.
-5. In the terminal, run the following command to download the model weights:
-   ```bash
-   ./python.exe -c "import draw;draw.run()"
-   ```
-6. At this step you should see some logs including progress bars downloading the model weights.
-   Once you see
-    ```bash
-    Running Draw2 without OBS shared memory
-    Waiting for OBS to start...
-   ```
-   the download is complete, you can relaunch OBS Studio.
+   
+   The download is complete, you can enjoy detecting !
 
 </details>
 
