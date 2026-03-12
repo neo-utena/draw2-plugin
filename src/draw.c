@@ -2,10 +2,11 @@
 // Created by HichTala on 24/06/25.
 //
 
+#define DEFAULT_DISPLAY_CARD_HEIGHT 1195
+#define DEFAULT_DISPLAY_CARD_WIDTH 813
+
 #include "draw.h"
 #include "shared_memory_wrapper.h"
-
-#include <errno.h>
 
 const char *draw_source_get_name(void *type_data)
 {
@@ -55,14 +56,14 @@ uint32_t draw_source_get_height(void *data)
 {
 	draw_source_data_t *context = data;
 	if (!context->display_height)
-		return 1195;
+		return DEFAULT_DISPLAY_CARD_HEIGHT;
 	return context->display_height;
 }
 uint32_t draw_source_get_width(void *data)
 {
 	draw_source_data_t *context = data;
 	if (!context->display_width)
-		return 813;
+		return DEFAULT_DISPLAY_CARD_WIDTH;
 	return context->display_width;
 }
 
@@ -206,7 +207,7 @@ bool add_source_to_list(void *data, obs_source_t *source)
 	uint32_t flags = obs_source_get_output_flags(source);
 	const char *source_id = obs_source_get_id(source);
 
-	if (flags & OBS_SOURCE_VIDEO & (strcmp(source_id, "draw_source") != 0)) {
+	if ((flags & OBS_SOURCE_VIDEO) && (strcmp(source_id, "draw_source") != 0)) {
 		obs_property_list_insert_string(prop, idx, name, name);
 	}
 	return true;
@@ -246,11 +247,13 @@ obs_properties_t *draw_source_get_properties(void *data)
 
 void switch_source(draw_source_data_t *context, obs_source_t *source)
 {
-	obs_source_t *prev_source = obs_weak_source_get_source(context->source);
-	if (prev_source) {
-		obs_source_release(prev_source);
+	if (context->source) {
+		obs_source_t *prev_source = obs_weak_source_get_source(context->source);
+		if (prev_source) {
+			obs_source_release(prev_source);
+		}
+		obs_weak_source_release(context->source);
 	}
-	obs_weak_source_release(context->source);
 	context->source = obs_source_get_weak_source(source);
 }
 void draw_source_update(void *data, obs_data_t *settings)
