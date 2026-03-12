@@ -19,6 +19,7 @@ void *draw_source_create(obs_data_t *settings, obs_source_t *source)
 	draw_source_data_t *context = bzalloc(sizeof(draw_source_data_t));
 	context->shared_frame = NULL;
 	context->display_texture = NULL;
+	context->render = NULL;
 	obs_source_update(source, NULL);
 	return context;
 }
@@ -90,11 +91,19 @@ void draw_source_video_render(void *data, gs_effect_t *effect)
 		return;
 	}
 
-	gs_texrender_t *render = gs_texrender_create(GS_RGBA, GS_ZS_NONE);
-	if (!gs_texrender_begin(render, width, height)) {
+	if (!context->render || width != context->source_width || height != context->source_height) {
+		obs_enter_graphics();
+		if (context->render)
+			gs_texrender_destroy(context->render);
+		context->render = gs_texrender_create(GS_RGBA, GS_ZS_NONE);
+		obs_leave_graphics();
+	}
+
+	gs_texrender_reset(context->render);
+	if (!gs_texrender_begin(context->render, width, height)) {
+		blog(LOG_INFO, "Failed to begin texture rendering");
 		obs_source_release(source);
 		context->processing = false;
-		gs_texrender_destroy(render);
 		return;
 	}
 
@@ -106,9 +115,9 @@ void draw_source_video_render(void *data, gs_effect_t *effect)
 	gs_ortho(0.0f, (float)width, 0.0f, (float)height, -100.0f, 100.0f);
 
 	obs_source_video_render(source);
-	gs_texrender_end(render);
+	gs_texrender_end(context->render);
 
-	gs_texture_t *texture = gs_texrender_get_texture(render);
+	gs_texture_t *texture = gs_texrender_get_texture(context->render);
 	if (texture) {
 		gs_stagesurf_t *stage = gs_stagesurface_create(width, height, GS_RGBA);
 		gs_stage_texture(stage, texture);
@@ -129,7 +138,6 @@ void draw_source_video_render(void *data, gs_effect_t *effect)
 		}
 	}
 
-	gs_texrender_destroy(render);
 	obs_source_release(source);
 
 	if (!read_shared_memory(context)) {
