@@ -42,9 +42,9 @@ void draw_source_destroy(void *data)
 	if (context->stage) {
 		gs_stagesurface_destroy(context->stage);
 	}
-	obs_leave_graphics();
 	if (context->display_texture)
 		gs_texture_destroy(context->display_texture);
+	obs_leave_graphics();
 	if (context->shared_frame)
 		destroy_shared_memory(context);
 
@@ -132,8 +132,8 @@ void draw_source_video_render(void *data, gs_effect_t *effect)
 			obs_leave_graphics();
 		}
 
-		gs_stage_texture(context->stage, texture);
 		if (context->stage) {
+			gs_stage_texture(context->stage, texture);
 			uint8_t *frame = NULL;
 			uint32_t linesize = 0;
 
