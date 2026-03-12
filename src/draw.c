@@ -35,11 +35,14 @@ void draw_source_destroy(void *data)
 		obs_weak_source_release(context->source);
 	}
 
+	obs_enter_graphics();
 	if (context->render) {
-		obs_enter_graphics();
 		gs_texrender_destroy(context->render);
-		obs_leave_graphics();
 	}
+	if (context->stage) {
+		gs_stagesurface_destroy(context->stage);
+	}
+	obs_leave_graphics();
 	if (context->shared_frame) {
 		destroy_shared_memory(context);
 	}
@@ -119,19 +122,25 @@ void draw_source_video_render(void *data, gs_effect_t *effect)
 
 	gs_texture_t *texture = gs_texrender_get_texture(context->render);
 	if (texture) {
-		gs_stagesurf_t *stage = gs_stagesurface_create(width, height, GS_RGBA);
-		gs_stage_texture(stage, texture);
-		if (stage) {
+		if (!context->stage || width != context->source_width || height != context->source_height) {
+			obs_enter_graphics();
+			if (context->stage)
+				gs_stagesurface_destroy(context->stage);
+			context->stage = gs_stagesurface_create(width, height, GS_RGBA);
+			obs_leave_graphics();
+		}
+
+		gs_stage_texture(context->stage, texture);
+		if (context->stage) {
 			uint8_t *frame = NULL;
 			uint32_t linesize = 0;
 
-			if (gs_stagesurface_map(stage, &frame, &linesize)) {
+			if (gs_stagesurface_map(context->stage, &frame, &linesize)) {
 				if (context->shared_frame) {
 					write_message_to_shared_memory(context, frame, linesize, width, height);
 				}
-				gs_stagesurface_unmap(stage);
+				gs_stagesurface_unmap(context->stage);
 			}
-			gs_stagesurface_destroy(stage);
 
 		} else {
 			blog(LOG_ERROR, "Failed to capture stage surface");
