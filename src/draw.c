@@ -187,7 +187,7 @@ bool add_source_to_list(void *data, obs_source_t *source)
 	uint32_t flags = obs_source_get_output_flags(source);
 	const char *source_id = obs_source_get_id(source);
 
-	if (flags & OBS_SOURCE_VIDEO & (strcmp(source_id, "draw_source") != 0)) {
+	if ((flags & OBS_SOURCE_VIDEO) && (strcmp(source_id, "draw_source") != 0)) {
 		obs_property_list_insert_string(prop, idx, name, name);
 	}
 	return true;
