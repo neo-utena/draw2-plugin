@@ -287,4 +287,4 @@ struct obs_source_info draw_source = {.id = "draw_source",
 				      .get_defaults = draw_source_get_defaults,
 				      .video_render = draw_source_video_render,
 				      .get_properties = draw_source_get_properties,
-				      .icon_type = OBS_ICON_TYPE_COLOR};
+				      .icon_type = OBS_ICON_TYPE_IMAGE};

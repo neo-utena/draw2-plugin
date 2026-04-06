@@ -34,14 +34,24 @@ bienvenues.
 ---
 ## <div align="center">📰 News</div>
 
-> 🃏 **Dernière extension supportée:** `JUSH` --- mise à jour le `24-08-2025`  
-> 🔧 **Dernière version:** `0.1.5-alpha` --- mise à jour le `09-03-2025`
+> 🃏 **Dernière extension supportée:** `MZMU` --- mise à jour le `06-04-2026`  
+> 🔧 **Dernière version:** `0.2.0-beta` --- mise à jour le `06-04-2026`
 
 <table>
   <tr>
     <th>Date</th>
     <th>Type</th>
     <th>Description</th>
+  </tr>
+  <tr>
+    <td><b>06-04-2026</b></td>
+    <td>🃏 Pool de cartes</td>
+    <td>Mise à jour du pool de cartes --- prend désormais en charge les cartes jusqu'à <i>Le Labyrinthe des Morts</i></td>
+  </tr>
+  <tr>
+    <td><b>06-04-2026</b></td>
+    <td>🔧 Version de l'app</td>
+    <td>Dernière version 0.2.0-beta --- <a href="https://github.com/HichTala/draw2-plugin/releases/tag/0.2.0">voir les notes de maj</a></td>
   </tr>
   <tr>
     <td><b>09-03-2025</b></td>
@@ -68,7 +78,7 @@ correctement :
 <summary>🪟 Windows</summary>
 
 1. Téléchargez le programme d'installation du plugin à partir de ce
-   lien : [DRAW2 Plugin Installer](https://github.com/HichTala/draw2-plugin/releases/download/0.1.5/draw2-plugin-installer.exe)
+   lien : [DRAW2 Plugin Installer](https://github.com/HichTala/draw2-plugin/releases/download/0.2.0/draw2-plugin-installer.exe)
 2. Exécutez le programme d'installation et suivez les instructions à l'écran.
 3. Une fois l'installation terminée, lancez OBS Studio. Si tout est correctement configuré, vous devriez voir dans le
    menu `Docks`
