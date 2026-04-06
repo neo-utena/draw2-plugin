@@ -106,8 +106,7 @@ void DrawDock::StartPythonDraw()
 
 				QSettings settings = QSettings("HichTala", "Draw2");
 				QByteArray model_choice = settings.value("model_choice", "Base").toString().toUtf8();
-				PyTuple_SetItem(args, 3,
-						PyUnicode_FromString(std::string(model_choice).c_str()));
+				PyTuple_SetItem(args, 3, PyUnicode_FromString(std::string(model_choice).c_str()));
 
 				QByteArray deck_list_path1 = settings.value("deck_list1", "").toString().toUtf8();
 				QByteArray deck_list_path2 = settings.value("deck_list2", "").toString().toUtf8();
