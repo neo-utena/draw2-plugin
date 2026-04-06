@@ -80,8 +80,8 @@ SettingsDialog::SettingsDialog(QWidget *parent) : QDialog(parent)
 	auto *model_label = new QLabel(obs_module_text("Select model size to use:"), this);
 	model_layout->addWidget(model_label);
 	this->model_choice->setMaximumWidth(125);
-	this->model_choice->addItem("Large");
-	this->model_choice->addItem("Base");
+	this->model_choice->addItem(obs_module_text("model_size_large"));
+	this->model_choice->addItem(obs_module_text("model_size_base"));
 	int model_index = this->model_choice->findText(model_choice_string, Qt::MatchExactly);
 	if (model_index != -1) {
 		this->model_choice->setCurrentIndex(model_index);
