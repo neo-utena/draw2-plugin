@@ -1,6 +1,6 @@
 <div align="center">
     <p>
-        <img src="https://raw.githubusercontent.com/HichTala/draw2/refs/heads/main/figures/banner-draw.png">
+        <img src="https://raw.githubusercontent.com/HichTala/draw2/refs/heads/main/figures/banner-draw.png" alt="DRAW Banner">
     </p>
 
 [![DRAW2 Workflow](https://github.com/HichTala/draw2-plugin/actions/workflows/push.yaml/badge.svg)](https://github.com/HichTala/draw2-plugin/actions/workflows/push.yaml)
@@ -38,7 +38,7 @@ OSに応じた手順に従ってセットアップしてください。
 <details open>
 <summary>🪟 Windows</summary>
 
-1. プラグインのインストーラーを[こちら](https://github.com/HichTala/draw2-plugin/releases/download/0.1.4/draw2-plugin-installer.exe)からダウンロードします。
+1. プラグインのインストーラーを[こちら](https://github.com/HichTala/draw2-plugin/releases/download/0.2.0/draw2-plugin-installer.exe)からダウンロードします。
 2. インストーラーを実行し、画面の指示に従ってください。
 3. インストールが完了したらOBS Studioを起動します。`Docks` メニューに `Draw 2` が表示されるので、有効化して好きな位置に配置します。
 4. まだインストールは完了していません。DRAW 2のモデルウェイトをダウンロードする必要があります。OBS Studioを閉じ、プラグインがインストールされたフォルダを開きます（デフォルト:`C:\Program Files\draw2`）。`python` フォルダを開き、右クリックして「ターミナルで開く」を選択します。
@@ -62,6 +62,7 @@ OSに応じた手順に従ってセットアップしてください。
 
 </details>
 
+<details>
 <summary>🍏 MacOS</summary>
 
 MacOSでのOBSプラグインに詳しくないため、信頼性のあるインストールガイドを提供できません。MacOSでのコンパイルは成功していますが、十分なテストを行っていません。MacOSでのOBSプラグインに詳しい方がいれば、インストールガイドの作成にぜひ協力ください。Pull Requestをお待ちしています。
