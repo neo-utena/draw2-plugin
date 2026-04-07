@@ -4,14 +4,14 @@
     </p>
 
 [![DRAW2 Workflow](https://github.com/HichTala/draw2-plugin/actions/workflows/push.yaml/badge.svg)](https://github.com/HichTala/draw2-plugin/actions/workflows/push.yaml)
-[![Licence](https://img.shields.io/pypi/l/ultralytics)](https://github.com/HichTala/draw2-plugin/blob/master/LICENSE)
+[![Licence](https://img.shields.io/pypi/l/ultralytics)](../LICENSE)
 [![Github](https://img.shields.io/badge/-github-181717?logo=github&labelColor=555)](https://github.com/HichTala/draw2)
 [![Twitter](https://img.shields.io/badge/-twitter-000?logo=x&labelColor=555)](https://twitter.com/hichtala)
 [![HuggingFace Downloads](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fhuggingface.co%2Fapi%2Fmodels%2FHichTala%2Fdraw2&query=%24.downloads&logo=huggingface&label=downloads&color=%23FFD21E)](https://huggingface.co/HichTala/draw2)
 [![Medium](https://img.shields.io/badge/-Medium-12100E?style=flat&logo=medium&labelColor=555)](https://medium.com/@hich.tala.phd/how-i-trained-again-my-model-to-detect-and-recognise-a-wide-range-of-yu-gi-oh-cards-5c567a320b0a)
 [![WandB](https://img.shields.io/badge/visualize_in-W%26B-yellow?logo=weightsandbiases&color=%23FFBE00)](https://wandb.ai/hich_/draw)
 
-[🇫🇷 Français](https://github.com/HichTala/draw2-plugin/blob/master/README_fr.md) / [🇧🇷 Português](https://github.com/HichTala/draw2-plugin/blob/master/README_pt-br.md)
+[🇬🇧 English](../README.md) | [🇫🇷 Français](README_fr.md) | [🇧🇷 Português](README_pt-br.md)
 
 </div>
 
@@ -21,16 +21,22 @@ DRAW 2（**D**etect and **R**ecognize **A** **W**ide range of cards version 2の
 Pythonバックエンドのプロジェクトは[こちら](https://github.com/HichTala/draw2)で公開されています。
 
 このプロジェクトは[GNU Affero General Public License v3.0](https://github.com/HichTala/draw2-plugin/blob/master/LICENCE)のもとで公開されており、どなたでも参加できます！
+---
+## <div align="center">📰 ニュース</div>
+
+> 🃏 **対応している最新の拡張機能:** `MZMU` --- 最終更新日 `06-04-2026`  
+> 🔧 **最新版:** `0.2.0-beta` --- 最終更新日 `06-04-2026`
 
 ---
 
-## 📄 ドキュメント
+## <div align="center">📄 ドキュメント</div>
 
 ### 🛠️ インストール
 
 OSに応じた手順に従ってセットアップしてください。
 
-🪟 Windows
+<details open>
+<summary>🪟 Windows</summary>
 
 1. プラグインのインストーラーを[こちら](https://github.com/HichTala/draw2-plugin/releases/download/0.1.4/draw2-plugin-installer.exe)からダウンロードします。
 2. インストーラーを実行し、画面の指示に従ってください。
@@ -48,14 +54,18 @@ OSに応じた手順に従ってセットアップしてください。
    Running Draw2 without OBS shared memory
    Waiting for OBS to start...
    ```
-
-🐧 Linux
+</details>
+<details>
+<summary>🐧 Linux</summary>
 
 準備中です 👀
 
-🍏 MacOS
+</details>
+
+<summary>🍏 MacOS</summary>
 
 MacOSでのOBSプラグインに詳しくないため、信頼性のあるインストールガイドを提供できません。MacOSでのコンパイルは成功していますが、十分なテストを行っていません。MacOSでのOBSプラグインに詳しい方がいれば、インストールガイドの作成にぜひ協力ください。Pull Requestをお待ちしています。
+</details>
 
 ### 🚀 使い方
 
@@ -71,17 +81,34 @@ MacOSでのOBSプラグインに詳しくないため、信頼性のあるイン
 4. `Start DRAW` ボタンをクリックして検出を開始します。プラグインはリアルタイムでカードを検出し、`Draw Display` ソースを使って画面に表示します。
 5. プラグインをお楽しみください！
 
+ちょっとだけご紹介します :)
+<div align="center">
+    <img src="https://raw.githubusercontent.com/HichTala/draw2/refs/heads/main/figures/overview.gif" width="960" height="540" />
+</div>
+
 ---
 
-## 🔍 技術的な詳細
+## <div align="center">🔍 技術的な詳細</div>
 
 データ収集から実際の認識までのプロセスについては、[Mediumの記事](https://medium.com/@hich.tala.phd/how-i-trained-again-my-model-to-detect-and-recognise-a-wide-range-of-yu-gi-oh-cards-5c567a320b0a)で詳しく解説しています。質問があればお気軽にIssueを立ててください。
 
 ---
 
-## 💬 連絡先
+##  <div align="center">💬 連絡先</div>
 
 - Twitter: [@hichtala](https://twitter.com/hichtala)
 - メール: [hich.tala.phd@gmail.com](mailto:hich.tala.phd@gmail.com)
 
 質問やアイデアがあれば、IssueまたはSNSまでお気軽にご連絡ください！
+
+---
+
+## <div align="center">⭐Star History</div>
+
+<a href="https://www.star-history.com/#HichTala/draw2&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=HichTala/draw2&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=HichTala/draw2&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=HichTala/draw2&type=date&legend=top-left" />
+ </picture>
+</a>
