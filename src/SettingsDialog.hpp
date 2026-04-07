@@ -27,6 +27,7 @@ private:
 	QComboBox *deck_list1 = new QComboBox();
 	QComboBox *deck_list2 = new QComboBox();
 	QComboBox *deck_list3 = new QComboBox();
+	QComboBox *model_choice = new QComboBox();
 	QSpinBox *minimum_out_of_screen_time = new QSpinBox;
 	QSpinBox *minimum_screen_time = new QSpinBox;
 	QSlider *confidence_slider = new QSlider(Qt::Horizontal);
